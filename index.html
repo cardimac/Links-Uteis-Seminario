@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Links Úteis para Professores e Líderes do Programa do Seminário</title>
+<style>
+  :root {
+    --bg: #f4f2ed;
+    --card: #ffffff;
+    --ink: #1c2332;
+    --muted: #5d6679;
+    --brand: #1f4e79;
+    --brand-2: #2e6da4;
+    --accent: #c9892b;
+    --line: #e5e1d8;
+    --hover: #f0f5fb;
+    --shadow: 0 1px 2px rgba(20,30,50,.06), 0 8px 24px rgba(20,30,50,.07);
+    --radius: 16px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1320;
+      --card: #171f30;
+      --ink: #e7ecf5;
+      --muted: #9aa5ba;
+      --brand: #8dbcf0;
+      --brand-2: #4d86c4;
+      --accent: #e3ad5a;
+      --line: #27324a;
+      --hover: #1e2940;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+    color: #fff;
+    padding: clamp(28px, 5vw, 56px) 20px clamp(64px, 9vw, 96px);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.08);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow {
+    display: inline-block;
+    font-size: .78rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,.16);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    line-height: 1.2;
+    font-weight: 750;
+    max-width: 820px;
+  }
+  .hero p { margin: 0; opacity: .88; max-width: 620px; }
+
+  main {
+    max-width: 1200px;
+    margin: -48px auto 0;
+    padding: 0 16px 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .search {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px;
+    border: 1px solid var(--line);
+    margin-bottom: 22px;
+  }
+  .search svg { flex: none; color: var(--muted); }
+  .search input {
+    flex: 1;
+    border: 0;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+    padding: 10px 0;
+    min-width: 0;
+  }
+  .search input::placeholder { color: var(--muted); }
+  .count { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: 20px;
+    align-items: start;
+  }
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  /* Ordem visual: Estaca → Seminário Brasil → Oficiais da Igreja */
+  #content > section:nth-child(1) { order: 3; }
+  #content > section:nth-child(2) { order: 2; }
+  #content > section:nth-child(3) { order: 1; }
+  /* Seções com dois ou mais grupos (ex.: Recursos da Estaca) ficam em colunas em telas largas */
+  .section:has(> .group + .group) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    column-gap: 28px;
+    align-items: start;
+  }
+  .section:has(> .group + .group) > .section-head { grid-column: 1 / -1; }
+  .section:has(> .group + .group) > .group { margin-top: 10px; }
+
+  .section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+  }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+  .num {
+    flex: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent), #e7a54a);
+    color: #fff;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .group { margin-top: 18px; }
+  .group h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 8px;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .group h3 svg { flex: none; color: var(--accent); }
+  .group h4 {
+    margin: 0 0 8px;
+    font-size: .88rem;
+    color: var(--brand);
+    font-weight: 700;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .block-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    column-gap: 28px;
+    row-gap: 32px;
+    align-items: start;
+    margin-top: 20px;
+  }
+  .block-grid > .group { margin-top: 0; }
+  /* Espaço extra antes do Diretório (só na seção Oficiais) */
+  .section.wide > .group {
+    margin-top: 40px;
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li + li { margin-top: 6px; }
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid transparent;
+    transition: background .15s, border-color .15s, transform .15s;
+  }
+  .item:hover, .item:focus-visible {
+    background: var(--hover);
+    border-color: var(--line);
+    outline: none;
+  }
+  .item:active { transform: scale(.99); }
+  .item-text { min-width: 0; }
+  .item-name {
+    display: block;
+    position: relative;
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: .95rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    text-align: left;
+    color: var(--brand);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .item:hover .item-name, .item:focus-visible .item-name {
+    color: var(--accent);
+  }
+  /* Bullet preso à primeira linha do texto, sempre à esquerda */
+  .item-name::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: .45em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .tag {
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 16px;
+    font-size: .72rem;
+    font-weight: 600;
+    color: var(--brand);
+    background: var(--hover);
+    border: 1px solid var(--line);
+    padding: 1px 8px;
+    border-radius: 999px;
+  }
+  .btn {
+    flex: none;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--brand);
+    padding: 7px 12px;
+    border-radius: 10px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .item:hover .btn { background: var(--brand-2); }
+
+  .empty {
+    display: none;
+    text-align: center;
+    color: var(--muted);
+    padding: 40px 10px;
+  }
+  .empty.show { display: block; }
+  .hidden { display: none !important; }
+
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .88rem;
+    padding: 8px 16px 36px;
+  }
+  footer strong { color: var(--ink); }
+  footer .sep { display: block; height: 1px; width: 80px; margin: 0 auto 14px; background: var(--line); }
+
+  @media (max-width: 520px) {
+    .hero { padding-bottom: 72px; }
+    main { margin-top: -40px; padding: 0 12px 28px; }
+    .section { padding: 18px 16px; }
+    .item { gap: 8px; padding: 10px 8px; }
+    .item-name { font-size: .9rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <h1>Links Úteis para Professores e Líderes do Programa do Seminário</h1>
+    <p>Todos os recursos em um só lugar, organizados por categoria. Toque em “Abrir” para acessar cada link.</p>
+  </div>
+</header>
+
+<main>
+  <label class="search" aria-label="Pesquisar links">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+    </svg>
+    <input id="q" type="search" placeholder="Pesquisar por nome do recurso…" autocomplete="off">
+    <span class="count" id="count"></span>
+  </label>
+
+  <div class="stack" id="content">
+
+    <!-- 1. RECURSOS OFICIAIS DA IGREJA -->
+    <section class="section wide" data-section>
+      <div class="section-head">
+        <span class="num" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg></span>
+        <h2>Recursos oficiais da Igreja</h2>
+      </div>
+
+      <div class="grid" style="margin-top:0">
+        <div class="group" data-group>
+          <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>Aplicativos</h3>
+          <ul>
+            <li><a class="item" data-item href="https://wise2.churchofjesuschrist.org/" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Wise2</span><span class="tag">Desktop</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://wiseattendance.churchofjesuschrist.org/" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Wise Attendance</span><span class="tag">Celular</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://si-help.churchofjesuschrist.org/hc/pt/articles/47890729074317-Aplicativo-de-Presen%C3%A7a-WISE-PWA" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Wise Attendance</span><span class="tag">Instruções</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://silearn.churchofjesuschrist.org/" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">CANVAS</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://play.google.com/store/search?q=dominio%20doutrinario&amp;c=apps&amp;hl=pt_BR" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Domínio Doutrinário</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://myseminary.churchofjesuschrist.org/" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">My Seminary</span></span>
+              </a></li>
+          </ul>
+        </div>
+
+        <div class="group" data-group>
+          <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg>Manuais para Professores</h3>
+          <ul>
+            <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/old-testament-seminary-manual-2026?lang=por" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Velho Testamento — Manual do Professor do Seminário</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/seminary-curriculum-training-2026?lang=por" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Treinamento para o Currículo do Seminário</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022?lang=por" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Ensinar à Maneira do Salvador</span><span class="tag">Para todos os que ensinam em casa e na Igreja</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/teacher-development-skills?lang=por" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Aperfeiçoamento Didático do Professor</span></span>
+              </a></li>
+          </ul>
+        </div>
+
+        <div class="group" data-group>
+          <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Técnicas de Estudo das Escrituras</h3>
+          <ul>
+            <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/scripture-study-ideas?lang=por" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Ideias para o Estudo das Escrituras</span></span>
+              </a></li>
+            <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/scripture-study-skills?lang=por" target="_blank" rel="noopener">
+              <span class="item-text"><span class="item-name">Técnicas de Estudo das Escrituras</span></span>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="group" data-group>
+        <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>Diretório de sites, redes sociais, canais e aplicativos</h3>
+
+        <div class="block-grid">
+
+          <div class="group" data-group>
+            <h4>Sites institucionais</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Site oficial mundial</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Site oficial em português</span></span></a></li>
+              <li><a class="item" data-item href="https://br.aigrejadejesuscristo.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja no Brasil</span></span></a></li>
+              <li><a class="item" data-item href="https://noticias-br.aigrejadejesuscristo.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Sala de Imprensa Brasil</span></span></a></li>
+              <li><a class="item" data-item href="https://www.vindeacristo.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Vinde a Cristo</span></span></a></li>
+              <li><a class="item" data-item href="https://newsroom.churchofjesuschrist.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Newsroom mundial</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/general-handbook?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Manual Geral da Igreja</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/maps/meetinghouses?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Localizador de capelas</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/temples?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Localizador de templos</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/learn/social-media-accounts?lang=eng" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Diretório de redes sociais oficiais</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Redes sociais oficiais</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.facebook.com/igrejadejesuscristo.brasil/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja no Brasil</span><span class="tag">Facebook</span></span></a></li>
+              <li><a class="item" data-item href="https://www.facebook.com/ChurchofJesusChrist/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja mundial</span><span class="tag">Facebook</span></span></a></li>
+              <li><a class="item" data-item href="https://www.facebook.com/VindeACristo/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Vinde a Cristo</span><span class="tag">Facebook</span></span></a></li>
+              <li><a class="item" data-item href="https://www.facebook.com/ChurchNewsroom/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Church Newsroom</span><span class="tag">Facebook</span></span></a></li>
+              <li><a class="item" data-item href="https://www.instagram.com/igrejadejesuscristo.brasil/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja no Brasil</span><span class="tag">Instagram</span></span></a></li>
+              <li><a class="item" data-item href="https://www.instagram.com/churchofjesuschrist/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja mundial</span><span class="tag">Instagram</span></span></a></li>
+              <li><a class="item" data-item href="https://www.instagram.com/vindeacristoorg/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Vinde a Cristo</span><span class="tag">Instagram</span></span></a></li>
+              <li><a class="item" data-item href="https://www.instagram.com/churchnewsroom/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Church Newsroom</span><span class="tag">Instagram</span></span></a></li>
+              <li><a class="item" data-item href="https://x.com/Ch_JesusChrist" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja mundial</span><span class="tag">X (antigo Twitter)</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Canais no YouTube</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.youtube.com/@IgrejadeJesusCristoPOR" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja de Jesus Cristo em português</span></span></a></li>
+              <li><a class="item" data-item href="https://www.youtube.com/@churchofjesuschrist" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Igreja de Jesus Cristo mundial</span></span></a></li>
+              <li><a class="item" data-item href="https://www.youtube.com/c/vindeacristo" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Vinde a Cristo</span></span></a></li>
+              <li><a class="item" data-item href="https://www.youtube.com/@strivetobe" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Strive to Be – Jovens</span></span></a></li>
+              <li><a class="item" data-item href="https://www.youtube.com/@ChurchNewsroom" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Church Newsroom</span></span></a></li>
+              <li><a class="item" data-item href="https://www.youtube.com/@TheTabernacleChoir" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Coro do Tabernáculo</span></span></a></li>
+              <li><a class="item" data-item href="https://www.youtube.com/c/churchofjesuschrist/channels" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Diretório de canais do YouTube</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Escrituras e materiais de estudo</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca do Evangelho</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/scriptures/bible?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Bíblia</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Livro de Mórmon</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Doutrina e Convênios</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/scriptures/pgp?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Pérola de Grande Valor</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/general-conference?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Conferência Geral</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/come-follow-me?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Vem, e Segue-Me</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/music/library/hymns?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Hinário</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/magazines?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Revistas da Igreja</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/gospel-topics?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Tópicos do Evangelho</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/media-library?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca de vídeos</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Seminário e Instituto de Religião</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/si?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Seminários e Institutos</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca de materiais de ensino</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual/doctrinal-mastery-core-document-2023?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Documento Principal de Domínio Doutrinário 2023</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca de treinamento</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Materiais de estudo do Seminário</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/manual?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Materiais de estudo do Instituto</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Educação e autossuficiência</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.byupathway.edu/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">BYU–Pathway Worldwide</span></span></a></li>
+              <li><a class="item" data-item href="https://www.byu.edu/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Brigham Young University (BYU)</span></span></a></li>
+              <li><a class="item" data-item href="https://www.byui.edu/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Brigham Young University–Idaho</span></span></a></li>
+              <li><a class="item" data-item href="https://www.byuh.edu/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Brigham Young University–Hawaii</span></span></a></li>
+              <li><a class="item" data-item href="https://autossuficiencia.org.br/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Autossuficiência Brasil</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/study/life-help?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Recursos de autossuficiência</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/self-reliance?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Fundo Perpétuo de Educação</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>História da família e genealogia</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.familysearch.org/pt/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">FamilySearch</span></span></a></li>
+              <li><a class="item" data-item href="https://www.familysearch.org/pt/tree/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Árvore Familiar</span></span></a></li>
+              <li><a class="item" data-item href="https://www.familysearch.org/pt/search/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Registros históricos</span></span></a></li>
+              <li><a class="item" data-item href="https://www.familysearch.org/pt/search/catalog" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Catálogo genealógico</span></span></a></li>
+              <li><a class="item" data-item href="https://www.familysearch.org/pt/wiki/P%C3%A1gina_principal" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Wiki de genealogia</span></span></a></li>
+              <li><a class="item" data-item href="https://www.familysearch.org/rootstech/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">RootsTech</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Organizações e programas da Igreja</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/callings/relief-society?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Sociedade de Socorro</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/callings/young-women?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Organização das Moças</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/callings/young-men?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Organização dos Rapazes</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/callings/primary?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Primária</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/callings/sunday-school?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Escola Dominical</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/youth/childrenandyouth?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Crianças e Jovens</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/youth/childrenandyouth/ftsoy?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Para o Vigor da Juventude</span></span></a></li>
+              <li><a class="item" data-item href="https://www.justserve.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">JustServe</span></span></a></li>
+              <li><a class="item" data-item href="https://br.aigrejadejesuscristo.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Mãos Que Ajudam</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Música, mídia e história da Igreja</h4>
+            <ul>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/music?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca de música</span></span></a></li>
+              <li><a class="item" data-item href="https://www.thetabernaclechoir.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Coro do Tabernáculo</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/music/library/childrens-songbook?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Músicas da Primária</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/media-library?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca de vídeos</span></span></a></li>
+              <li><a class="item" data-item href="https://www.churchofjesuschrist.org/media-library/video?lang=por" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Vídeos da Igreja</span></span></a></li>
+              <li><a class="item" data-item href="https://www.thechurchnews.com/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Church News</span></span></a></li>
+              <li><a class="item" data-item href="https://history.churchofjesuschrist.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">História da Igreja</span></span></a></li>
+              <li><a class="item" data-item href="https://history.churchofjesuschrist.org/landing/church-history-library" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca de História da Igreja</span></span></a></li>
+              <li><a class="item" data-item href="https://www.josephsmithpapers.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Joseph Smith Papers</span></span></a></li>
+              <li><a class="item" data-item href="https://www.templesquare.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Temple Square</span></span></a></li>
+            </ul>
+          </div>
+
+          <div class="group" data-group>
+            <h4>Aplicativos oficiais – Android e Apple (iOS)</h4>
+            <ul>
+              <li><a class="item" data-item href="https://play.google.com/store/apps/details?id=org.lds.ldssa" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca do Evangelho</span><span class="tag">Android</span></span></a></li>
+              <li><a class="item" data-item href="https://apps.apple.com/app/gospel-library/id598329798" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Biblioteca do Evangelho</span><span class="tag">Apple (iOS)</span></span></a></li>
+              <li><a class="item" data-item href="https://play.google.com/store/apps/details?id=org.lds.ldsmusic" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Música da Igreja (Sacred Music)</span><span class="tag">Android</span></span></a></li>
+              <li><a class="item" data-item href="https://apps.apple.com/app/lds-music/id477245625" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Música da Igreja (Sacred Music)</span><span class="tag">Apple (iOS)</span></span></a></li>
+              <li><a class="item" data-item href="https://play.google.com/store/apps/details?id=org.familysearch.mobile" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">FamilySearch – Árvore Familiar</span><span class="tag">Android</span></span></a></li>
+              <li><a class="item" data-item href="https://apps.apple.com/app/familysearch-family-tree/id885982973" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">FamilySearch – Árvore Familiar</span><span class="tag">Apple (iOS)</span></span></a></li>
+              <li><a class="item" data-item href="https://play.google.com/store/apps/details?id=org.lds.ldstools" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Member Tools – Ferramentas para Membros</span><span class="tag">Android</span></span></a></li>
+              <li><a class="item" data-item href="https://apps.apple.com/app/member-tools/id543299958" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Member Tools – Ferramentas para Membros</span><span class="tag">Apple (iOS)</span></span></a></li>
+              <li><a class="item" data-item href="https://play.google.com/store/apps/details?id=org.justserve" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">JustServe</span><span class="tag">Android</span></span></a></li>
+              <li><a class="item" data-item href="https://apps.apple.com/us/app/justserve/id1098620654" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">JustServe</span><span class="tag">Apple (iOS)</span></span></a></li>
+              <li><a class="item" data-item href="https://www.justserve.org/" target="_blank" rel="noopener"><span class="item-text"><span class="item-name">Get Involved – Serviço e voluntariado</span><span class="tag">Portal</span></span></a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. RECURSOS SEMINÁRIO BRASIL -->
+    <section class="section" data-section>
+      <div class="section-head">
+        <span class="num" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg></span>
+        <h2>Recursos Seminário Brasil</h2>
+      </div>
+      <div class="group" data-group>
+        <ul>
+          <li><a class="item" data-item href="https://sandwiche.me/linksuteisdoseminario" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Links Úteis — Material de apoio para alunos e professores do Seminário</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://www.youtube.com/playlist?list=PLOfS1-x2dr-Y" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Vídeos Legendados do Manual do Professor</span></span>
+            </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. RECURSOS DA ESTACA -->
+    <section class="section" data-section>
+      <div class="section-head">
+        <span class="num" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <h2>Recursos da Estaca</h2>
+      </div>
+
+      <div class="group" data-group>
+        <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Ferramentas</h3>
+        <ul>
+          <li><a class="item" data-item href="https://cardimac.github.io/GestorPresen-aApoioSemin-rio/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Gestor de Presença de Apoio ao Seminário</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/gestordecaronasseminario/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Gestor de Caronas do Seminário</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/Infoaula-Formulario/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Infoaula — Agenda da Aula do Seminário</span></span>
+            </a></li>
+        </ul>
+      </div>
+
+      <div class="group" data-group>
+        <h3><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>Instruções</h3>
+        <ul>
+          <li><a class="item" data-item href="https://cardimac.github.io/calendariodeaulas/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Calendário de Aulas</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/Infoaula-Guia/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Infoaula — Guia</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/Indicadores-do-Seminario/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Indicadores do Seminário</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/O-Programa-do-Seminario/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">O Programa do Seminário</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/Lideranca-e-Professores-do-Seminario-e-Instituto/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Liderança e Professores do Seminário e Instituto</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/Direitos-Presidencia/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Visão Geral dos Direitos de Presidência do Seminário</span></span>
+            </a></li>
+          <li><a class="item" data-item href="https://cardimac.github.io/Priorizar-Seminario-Diario/" target="_blank" rel="noopener">
+            <span class="item-text"><span class="item-name">Priorizar o Seminário Diário</span></span>
+            </a></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <p class="empty" id="empty">Nenhum recurso encontrado para essa pesquisa.</p>
+</main>
+
+<footer>
+  <span class="sep"></span>
+  Desenvolvido por <strong>Alexandre C. Cardim</strong>, versão de 08.11.2026
+</footer>
+
+<script>
+  (function () {
+    var input = document.getElementById('q');
+    var countEl = document.getElementById('count');
+    var emptyEl = document.getElementById('empty');
+    var items = Array.prototype.slice.call(document.querySelectorAll('[data-item]'));
+    var groups = Array.prototype.slice.call(document.querySelectorAll('[data-group]'));
+    var sections = Array.prototype.slice.call(document.querySelectorAll('[data-section]'));
+
+    function normalize(s) {
+      return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    }
+
+    function update() {
+      var term = normalize(input.value.trim());
+      var visible = 0;
+
+      items.forEach(function (a) {
+        var match = !term || normalize(a.textContent).indexOf(term) !== -1;
+        a.parentElement.classList.toggle('hidden', !match);
+        if (match) visible++;
+      });
+
+      groups.forEach(function (g) {
+        var any = g.querySelector('[data-item]:not(.hidden)') !== null;
+        g.classList.toggle('hidden', !any);
+      });
+
+      sections.forEach(function (s) {
+        var any = s.querySelector('[data-item]:not(.hidden)') !== null;
+        s.classList.toggle('hidden', !any);
+      });
+
+      countEl.textContent = term ? (visible + ' de ' + items.length) : (items.length + ' links');
+      emptyEl.classList.toggle('show', visible === 0);
+    }
+
+    input.addEventListener('input', update);
+    update();
+  })();
+</script>
+</body>
+</html>
